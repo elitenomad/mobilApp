@@ -4,22 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic','chatApp.tabs.chats'])
-
-.config(function($stateProvider) {
-  $stateProvider
-    .state('tab', {
-      url: '/',
-      templateUrl: '/js/template.html'
-    })
-    .state('tab.chats', {
-      url: '/chats',
-      templateUrl: '/js/chats/chats.html'
-    })
-    .state('tab.contacts', {
-      url: '/contacts',
-      templateUrl: '/js/contacts/contacts.html'
-    })
-})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -31,4 +15,19 @@ angular.module('starter', ['ionic','chatApp.tabs.chats'])
       StatusBar.styleDefault();
     }
   });
-});
+})
+.config(function($stateProvider) {
+    $stateProvider
+        .state('tab', {
+            url: '/',
+            templateUrl: '/js/template.html'
+        })
+        .state('tab.chats', {
+            url: '/chats',
+            templateUrl: '/js/chats/chats.html'
+        })
+        .state('tab.contacts', {
+            url: '/contacts',
+            templateUrl: '/js/contacts/contacts.html'
+        })
+})
